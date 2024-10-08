@@ -29,7 +29,7 @@ const Rounds = ({ score, setScore, choices }) => {
     setCurrentRound(currentRound + 1);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/games/record",
+        "https://stone-paper-scissor-backend-mathi.onrender.com/api/games/record",
         {
           roundData: {
             player1_choice: player1Choice,

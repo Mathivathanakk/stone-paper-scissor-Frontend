@@ -17,7 +17,7 @@ const Game = ({ setGameId }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/games/createGame",
+        "https://stone-paper-scissor-backend-mathi.onrender.com/api/games/createGame",
         { player1, player2 }
       );
       setGameId(response.data.id);

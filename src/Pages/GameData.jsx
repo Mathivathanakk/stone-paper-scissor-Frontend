@@ -15,7 +15,7 @@ const GameData = ({ score, setScore }) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/games/history/${params.id}`
+        `https://stone-paper-scissor-backend-mathi.onrender.com/api/games/history/${params.id}`
       );
       setData(response.data);
       setScore({ player1: 0, player2: 0 });
