@@ -7,7 +7,7 @@ I designed and developed an game application using the full stack(PERN)</li>
 
 ## Baseurl
 
-<li type='round'>Frontend-https://stone-paper-scissor-frontend.vercel.app/</li>
+<li type='round'>Frontend-http://stonepaperscissor-task-s3.s3-website.ap-south-1.amazonaws.com</li>
 <li type='round'>Backend-https://stone-paper-scissor-backend-mathi.onrender.com</li>
 
 
@@ -25,10 +25,10 @@ I designed and developed an game application using the full stack(PERN)</li>
 <li type='round'>After the 6 round, the game will be over</li>
 <li type='round'>And you can see the game data of that round</li>
 <li type='round'>I stored the data in postgresql database in the AWS </li>
-<li type='round'>I hosted frontend in Vercel and backend in Render</li>
+<li type='round'>I hosted in aws </li>
 
 ## Technology stack
 
-<li type='square'>Frontend-Reactjs,React Router Dom,Axios</li>
+<li type='square'>Frontend-Reactjs,React Router Dom,Axios,useContext</li>
 <li type='square'>Backend-Nodejs,Expressjs</li>
 <li type='square'>DataBase-postgresql</li>

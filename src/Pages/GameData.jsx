@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { StoreContext } from "../Context/StoreContext";
 
-const GameData = ({ score, setScore }) => {
+const GameData = () => {
+
+  const {setScore,url}=useContext(StoreContext)
   const [data, setData] = useState([]);
   const params = useParams();
-  //console.log(params)
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -15,7 +18,7 @@ const GameData = ({ score, setScore }) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `https://stone-paper-scissor-backend-mathi.onrender.com/api/games/history/${params.id}`
+        `${url}/api/games/history/${params.id}`
       );
       setData(response.data);
       setScore({ player1: 0, player2: 0 });
@@ -23,6 +26,7 @@ const GameData = ({ score, setScore }) => {
       console.log(error);
     }
   };
+  
   return (
     <div className="container d-flex justify-content-center align-items-center flex-wrap flex-column  ">
       <div className="d-flex justify-content-center align-items-center flex-wrap flex-column mt-5 register p-2">

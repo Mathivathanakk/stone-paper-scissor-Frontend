@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { StoreContext } from "../Context/StoreContext";
 
 
 
-const Game = ({ setGameId }) => {
-  const [player1, setPlayer1] = useState("");
+const Game = () => {
 
-  const [player2, setPlayer2] = useState("");
-
-  // const [gameId, setGameId] = useState(null);
+  const {setGameId,player1,player2,setPlayer1,setPlayer2,url}= useContext(StoreContext)
 
   const navigate = useNavigate();
 
@@ -17,7 +15,7 @@ const Game = ({ setGameId }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://stone-paper-scissor-backend-mathi.onrender.com/api/games/createGame",
+        url+"/api/games/createGame",
         { player1, player2 }
       );
       setGameId(response.data.id);

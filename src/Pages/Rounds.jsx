@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { StoreContext } from "../Context/StoreContext";
 
-const Rounds = ({ score, setScore, choices }) => {
-  const [player1Choice, setPlayer1Choice] = useState("");
-  const [player2Choice, setPlayer2Choice] = useState("");
-  const [currentRound, setCurrentRound] = useState(1);
+const Rounds = () => {
+  
+  const {
+    score,
+    setScore,
+    choices,
+    player1Choice,
+    setPlayer1Choice,
+    player2Choice,
+    setPlayer2Choice,
+    currentRound,
+    setCurrentRound,
+    url
+  } = useContext(StoreContext);
 
   const params = useParams();
   const navigate = useNavigate();
@@ -29,7 +40,7 @@ const Rounds = ({ score, setScore, choices }) => {
     setCurrentRound(currentRound + 1);
     try {
       const response = await axios.post(
-        "https://stone-paper-scissor-backend-mathi.onrender.com/api/games/record",
+        url+"/api/games/record",
         {
           roundData: {
             player1_choice: player1Choice,
